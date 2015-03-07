@@ -1,0 +1,17 @@
+{
+  "name": "ScriptaVolent",
+  "description": "",
+  "keywords": [],
+  "version": "0.1",
+  "license": "Apache License 2.0",
+  "type": "project",
+  "require": {
+    "twbs/bootstrap": "3.3.2",
+    "components/jquery": "2.1.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "ScriptaVolent\\": "app/ScriptaVolent/"
+    }
+  }
+}

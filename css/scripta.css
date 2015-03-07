@@ -1,0 +1,26 @@
+body {
+    background-color: #926B42;
+}
+
+nav.navbar {
+    margin-bottom: 0;
+    box-shadow: 1px 1px 4px 0px #603404;
+}
+
+main.container {
+    background-color: #C2A687;
+    box-shadow: 1px 1px 4px 0px #603404;
+}
+
+/* Forms */
+textarea {
+    resize: both;
+}
+
+textarea.vert {
+    resize: vertical;
+}
+
+textarea.noResize {
+    resize: none;
+}
