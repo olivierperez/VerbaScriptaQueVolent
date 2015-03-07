@@ -1,0 +1,13 @@
+# App
+.htaccess
+.htpasswd
+vendor
+cache/
+tpl_c/
+
+# IDE
+.idea/
+*.iml
+
+# Tools
+composer.phar
