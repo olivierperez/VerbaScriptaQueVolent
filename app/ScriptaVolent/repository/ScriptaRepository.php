@@ -10,7 +10,7 @@ class ScriptaRepository {
     }
 
     public function insert($scriptum) {
-        $stmt = $this->pdo->prepare('INSERT INTO scripta (ref, title, content) VALUES (:ref, :title, :content)');
+        $stmt = $this->pdo->prepare('INSERT INTO scriptum (ref, title, content) VALUES (:ref, :title, :content)');
         $stmt->execute([
                            'ref' => $scriptum->ref,
                            'title' => $scriptum->title,
@@ -22,7 +22,7 @@ class ScriptaRepository {
     }
 
     public function get($id) {
-        $stmt = $this->pdo->prepare('SELECT * FROM scripta WHERE id=:id');
+        $stmt = $this->pdo->prepare('SELECT * FROM scriptum WHERE id=:id');
         $stmt->execute(['id' => $id]);
         return $stmt->fetchObject('ScriptaVolent\\Model\\Scriptum');
     }
