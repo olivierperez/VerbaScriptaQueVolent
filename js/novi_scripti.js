@@ -3,7 +3,7 @@
 $(document).ready(function () {
     var onSuccess = function (response) {
         console.log(response);
-        document.location = '/scripta.php?id=' + response.id + '&ref=' + response.ref;
+        document.location = '/index.php/' + response.id + '/' + response.ref;
     };
     var onFail = function (status, response) {
 
@@ -21,7 +21,7 @@ $(document).ready(function () {
 
         // Retreive data
         var scriptum = {
-            label: this.elements.label.value,
+            title: this.elements.title.value,
             content: this.elements.content.value
         };
 

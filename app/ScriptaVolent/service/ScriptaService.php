@@ -29,7 +29,7 @@ class ScriptaService {
     public function findScripta($id, $ref) {
         $scripta = $this->scriptaRepository->get($id);
 
-        if ($scripta->ref === $ref || true) {
+        if ($scripta->ref === $ref) {
             return $scripta;
         } else {
             return null;

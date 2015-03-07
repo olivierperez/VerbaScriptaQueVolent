@@ -1,7 +1,7 @@
 <?php
 // SCRIPTA
-const REF_SIZE = 16; // if change, take a look to REGEX_REF
+const REF_SIZE = 16;
 
 // REGEX
 const REGEX_LABEL = '/^[áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœa-z0-9_ -]+$/i';
-const REGEX_REF = '/^[a-z0-9]{16}$/i';
+const REGEX_REF = '/^[a-z0-9]+$/i';

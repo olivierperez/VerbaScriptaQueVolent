@@ -10,10 +10,10 @@ class ScriptaRepository {
     }
 
     public function insert($scriptum) {
-        $stmt = $this->pdo->prepare('INSERT INTO scripta (ref, label, content) VALUES (:ref, :label, :content)');
+        $stmt = $this->pdo->prepare('INSERT INTO scripta (ref, title, content) VALUES (:ref, :title, :content)');
         $stmt->execute([
                            'ref' => $scriptum->ref,
-                           'label' => $scriptum->label,
+                           'title' => $scriptum->title,
                            'content' => $scriptum->content,
                        ]);
         $scriptum->id = $this->pdo->lastInsertId();
