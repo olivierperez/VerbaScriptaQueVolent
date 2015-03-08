@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS `scriptum` (
   `title` varchar(255) NOT NULL,
   `content` text NOT NULL,
   `creation` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `onelife` tinyint(1) NOT NULL DEFAULT '0',
   `destruction` timestamp NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `ref` (`ref`)

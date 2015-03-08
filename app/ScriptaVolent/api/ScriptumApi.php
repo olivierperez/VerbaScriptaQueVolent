@@ -1,7 +1,7 @@
 <?php
 namespace ScriptaVolent\Api;
 
-use ScriptaVolent\service\ScriptaService;
+use ScriptaVolent\service\ScriptumService;
 use ScriptaVolent\Utils;
 
 class ScriptumApi implements Api {
@@ -11,7 +11,7 @@ class ScriptumApi implements Api {
     private $scriptaService;
 
     function __construct() {
-        $this->scriptaService = new ScriptaService();
+        $this->scriptaService = new ScriptumService();
     }
 
     function onPost() {
@@ -19,6 +19,7 @@ class ScriptumApi implements Api {
             $scriptum = json_decode($_POST['scriptum']);
             $scriptum->label = substr(filter_var($scriptum->title, FILTER_VALIDATE_REGEXP, ['options' => ['regexp' => REGEX_LABEL]]), 0, 255);
             $scriptum->destruction = filter_var($scriptum->destruction, FILTER_VALIDATE_REGEXP, ['options' => ['regexp' => REGEX_DATE]]);
+            $scriptum->onelife = !!$scriptum->onelife; // Only allow true or false
             // TODO clean $scriptum->content input
 
             if (!empty($scriptum->title) && !empty($scriptum->content)) {

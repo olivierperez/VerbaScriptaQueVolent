@@ -3,12 +3,12 @@ namespace ScriptaVolent\service;
 
 use ScriptaVolent\ServiceFactory;
 
-class ScriptaService {
+class ScriptumService {
 
     private $scriptaRepository;
 
     function __construct() {
-        $this->scriptaRepository = ServiceFactory::ScriptaRepository();
+        $this->scriptaRepository = ServiceFactory::ScriptumRepository();
     }
 
     public function createScriptum($scriptum) {
@@ -17,8 +17,8 @@ class ScriptaService {
     }
 
     private function generateRef() {
-        $alphabet = "azertyuiopqsdfghjklmwxcvbn1234567890";
-        $ref = "";
+        $alphabet = 'azertyuiopqsdfghjklmwxcvbn1234567890';
+        $ref = '';
         for ($i = 0; $i < REF_SIZE; $i++) {
             $ref .= $alphabet[mt_rand(0, strlen($alphabet) - 1)];
         }
@@ -26,11 +26,14 @@ class ScriptaService {
         return $ref;
     }
 
-    public function findScripta($id, $ref) {
-        $scripta = $this->scriptaRepository->get($id);
+    public function read($id, $ref) {
+        $scriptum = $this->scriptaRepository->get($id);
 
-        if ($scripta->ref === $ref) {
-            return $scripta;
+        if ($scriptum != null && $scriptum->ref === $ref) {
+            if ($scriptum->onelife) {
+                $this->scriptaRepository->delete($scriptum);
+            }
+            return $scriptum;
         } else {
             return null;
         }

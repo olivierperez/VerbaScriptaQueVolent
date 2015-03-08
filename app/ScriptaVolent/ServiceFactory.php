@@ -1,7 +1,7 @@
 <?php
 namespace ScriptaVolent;
 
-use ScriptaVolent\repository\ScriptaRepository;
+use ScriptaVolent\repository\ScriptumRepository;
 
 class ServiceFactory {
 
@@ -12,10 +12,10 @@ class ServiceFactory {
     }
 
     /**
-     * @return ScriptaRepository
+     * @return ScriptumRepository
      */
-    public static function ScriptaRepository() {
-        return new ScriptaRepository(self::$pdo);
+    public static function ScriptumRepository() {
+        return new ScriptumRepository(self::$pdo);
     }
 
 

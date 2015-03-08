@@ -9,6 +9,7 @@ $(document).ready(function () {
         console.log(response);
         document.location = response.url;
     };
+
     var onFail = function (status, response) {
         alert('failed(' + status + ') => ' + response);
     };
@@ -26,7 +27,8 @@ $(document).ready(function () {
         var scriptum = {
             title: this.elements.title.value,
             content: this.elements.content.value,
-            destruction: this.elements.destruction.value
+            destruction: this.elements.destruction.value,
+            onelife: this.elements.onelife.checked
         };
 
         // FormData

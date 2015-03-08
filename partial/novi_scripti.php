@@ -17,7 +17,16 @@
 
             <div class="input-group">
                 <label class="input-group-addon" for="destruction">Destruction date</label>
-                <input type="text" name="destruction" id="destruction" class="form-control datepicker" maxlength="10" required/>
+                <input type="text" name="destruction" id="destruction" class="form-control datepicker" maxlength="10"
+                       required/>
+            </div>
+
+            <div class="input-group">
+                <label class="input-group-addon" for="onelife">Destroy after reading</label>
+
+                <div class="form-control">
+                    <input type="checkbox" name="onelife" id="onelife" class="checkbox"/>
+                </div>
             </div>
         </div>
     </div>
