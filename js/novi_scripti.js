@@ -7,7 +7,7 @@ $(document).ready(function () {
 
     var onSuccess = function (response) {
         console.log(response);
-        document.location = '/index.php/' + response.id + '/' + response.ref;
+        document.location = response.url;
     };
     var onFail = function (status, response) {
         alert('failed(' + status + ') => ' + response);

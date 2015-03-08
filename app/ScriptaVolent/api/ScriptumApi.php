@@ -2,6 +2,7 @@
 namespace ScriptaVolent\Api;
 
 use ScriptaVolent\service\ScriptaService;
+use ScriptaVolent\Utils;
 
 class ScriptumApi implements Api {
 
@@ -22,6 +23,7 @@ class ScriptumApi implements Api {
 
             if (!empty($scriptum->title) && !empty($scriptum->content)) {
                 $scriptum = $this->scriptaService->createScriptum($scriptum);
+                $scriptum->url = Utils::directLink($scriptum);
                 echo json_encode($scriptum);
                 http_response_code(201);
             }

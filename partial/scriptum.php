@@ -42,6 +42,10 @@ if (!empty($id) && !empty($ref)) {
                 <strong class="list-group-item-heading"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Destruction</strong>
                 <p class="list-group-item-text">' . Utils::htmlEscape($scripta->destruction) . '</p>
             </div>
+            <div class="list-group-item">
+                <strong class="list-group-item-heading"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> Share link</strong>
+                <p class="list-group-item-text"><a href="' . Utils::directLink($scripta) . '">' . Utils::directLink($scripta) . '</a></p>
+            </div>
         </div>
     </div>
 </div>
