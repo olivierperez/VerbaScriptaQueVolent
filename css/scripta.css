@@ -30,3 +30,17 @@ textarea.noResize {
     outline: 0px none;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(96, 52, 4, 0.6);
 }
+
+/* Lists */
+
+.list-group-item p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Panels */
+
+.panel-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

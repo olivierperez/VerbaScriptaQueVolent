@@ -12,12 +12,12 @@
 
             <div class="input-group">
                 <label class="input-group-addon" for="title">Title</label>
-                <input type="text" name="title" id="title" class="form-control" required/>
+                <input type="text" name="title" id="title" class="form-control" maxlength="255" required/>
             </div>
 
             <div class="input-group">
                 <label class="input-group-addon" for="destruction">Destruction date</label>
-                <input type="text" name="destruction" id="destruction" class="form-control datepicker" required/>
+                <input type="text" name="destruction" id="destruction" class="form-control datepicker" maxlength="10" required/>
             </div>
         </div>
     </div>
