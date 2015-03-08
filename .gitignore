@@ -4,6 +4,7 @@
 vendor
 cache/
 tpl_c/
+inc/conf.php
 
 # IDE
 .idea/

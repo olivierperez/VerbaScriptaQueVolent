@@ -9,7 +9,9 @@ This PHP tool allow you to write text that can fly away too, it as simple as fil
 * Create a database schema
 * Execute SQL script
 * Copy/paste the files
-* Go on your host : http://yourhost/
+* Copy `inc/conf.template.php` to `inc/conf.php`
+* Configure your app in `inc/conf.php`
+* Go to the tool: http://yourhost/
 
 ### How to create the database
 Execute the sql script `install/install.sql` in your dataabse schema.
