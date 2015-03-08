@@ -5,19 +5,19 @@
     <div class="row">
         <div class="col-md-6 form-group">
             <label for="content">Content</label>
-            <textarea name="content" id="content" rows="20" cols="50" class="form-control vert"></textarea>
+            <textarea name="content" id="content" rows="20" cols="50" class="form-control vert" required></textarea>
         </div>
         <div class="col-md-6 form-group">
             <label>Settings</label>
 
             <div class="input-group">
                 <label class="input-group-addon" for="title">Title</label>
-                <input type="text" name="title" id="title" class="form-control"/>
+                <input type="text" name="title" id="title" class="form-control" required/>
             </div>
 
             <div class="input-group">
                 <label class="input-group-addon" for="destruction">Destruction date</label>
-                <input type="text" name="destruction" id="destruction" class="form-control datepicker"/>
+                <input type="text" name="destruction" id="destruction" class="form-control datepicker" required/>
             </div>
         </div>
     </div>
