@@ -17,6 +17,7 @@ class ScriptumApi implements Api {
         if (!empty($_POST['scriptum'])) {
             $scriptum = json_decode($_POST['scriptum']);
             $scriptum->label = filter_var($scriptum->title, FILTER_VALIDATE_REGEXP, ['options' => ['regexp' => REGEX_LABEL]]);
+            $scriptum->destruction = filter_var($scriptum->destruction, FILTER_VALIDATE_REGEXP, ['options' => ['regexp' => REGEX_DATE]]);
             // TODO clean $scriptum->content input
 
             if (!empty($scriptum->title) && !empty($scriptum->content)) {

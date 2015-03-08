@@ -11,8 +11,13 @@
             <label>Settings</label>
 
             <div class="input-group">
-                <div class="input-group-addon">Title</div>
+                <label class="input-group-addon" for="title">Title</label>
                 <input type="text" name="title" id="title" class="form-control"/>
+            </div>
+
+            <div class="input-group">
+                <label class="input-group-addon" for="destruction">Destruction date</label>
+                <input type="text" name="destruction" id="destruction" class="form-control datepicker"/>
             </div>
         </div>
     </div>
@@ -21,4 +26,7 @@
 </form>
 
 <!-- App JS -->
+<script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css"/>
+<script src="/js/datepicker.js"></script>
 <script src="/js/novi_scripti.js"></script>

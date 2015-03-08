@@ -1,12 +1,16 @@
 'use strict';
 
 $(document).ready(function () {
+
+    // Handle form submition
+    //----------------------
+
     var onSuccess = function (response) {
         console.log(response);
         document.location = '/index.php/' + response.id + '/' + response.ref;
     };
     var onFail = function (status, response) {
-
+        alert('failed(' + status + ') => ' + response);
     };
 
     $('#novi_scripti').on('submit', function (event) {
@@ -15,14 +19,14 @@ $(document).ready(function () {
         event.stopPropagation();
         console.log(this);
 
-        var enctype = $(this).attr('enctype') || 'application/x-www-form-urlencoded';
         var method = $(this).attr('method') || 'POST';
         var url = $(this).attr('action') || '.';
 
         // Retreive data
         var scriptum = {
             title: this.elements.title.value,
-            content: this.elements.content.value
+            content: this.elements.content.value,
+            destruction: this.elements.destruction.value
         };
 
         // FormData
