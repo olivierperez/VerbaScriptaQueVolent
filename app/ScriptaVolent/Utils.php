@@ -17,7 +17,7 @@ class Utils {
         return self::serverUrl() . '/index.php/' . $scriptum->id . '/' . $scriptum->ref;
     }
 
-    private static function serverUrl() {
+    public static function serverUrl() {
         $scheme = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ? 'https' : 'http';
         $port = in_array($_SERVER['SERVER_PORT'], [80, 443]) ? '' : ':' . $_SERVER['SERVER_PORT'];
         $dirname = dirname($_SERVER['SCRIPT_NAME']);

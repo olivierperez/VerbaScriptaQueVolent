@@ -5,15 +5,15 @@ use ScriptaVolent\ServiceFactory;
 
 class ScriptumService {
 
-    private $scriptaRepository;
+    private $scriptumRepository;
 
     function __construct() {
-        $this->scriptaRepository = ServiceFactory::ScriptumRepository();
+        $this->scriptumRepository = ServiceFactory::ScriptumRepository();
     }
 
     public function createScriptum($scriptum) {
         $scriptum->ref = $this->generateRef();
-        return $this->scriptaRepository->insert($scriptum);
+        return $this->scriptumRepository->insert($scriptum);
     }
 
     private function generateRef() {
@@ -27,13 +27,13 @@ class ScriptumService {
     }
 
     public function read($id, $ref) {
-        $scriptum = $this->scriptaRepository->get($id);
+        $scriptum = $this->scriptumRepository->get($id);
         if ($scriptum != null && $scriptum->ref === $ref) {
             if ($scriptum->onelife) { // Can read one time
-                $this->scriptaRepository->delete($scriptum);
+                $this->scriptumRepository->delete($scriptum);
                 return $scriptum;
             } elseif ($scriptum->destruction < date('Y-m-d 00:00:00')) { // Can't read anymore
-                $this->scriptaRepository->delete($scriptum);
+                $this->scriptumRepository->delete($scriptum);
                 return null;
             } else { // Can read
                 return $scriptum;

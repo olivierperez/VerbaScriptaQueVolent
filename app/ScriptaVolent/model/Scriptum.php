@@ -5,7 +5,7 @@ class Scriptum {
 
     public $id;
     public $ref;
-    public $label;
+    public $title;
     public $content;
     public $creation;
     public $destruction;
