@@ -28,13 +28,17 @@ class ScriptumService {
 
     public function read($id, $ref) {
         $scriptum = $this->scriptaRepository->get($id);
-
         if ($scriptum != null && $scriptum->ref === $ref) {
-            if ($scriptum->onelife) {
+            if ($scriptum->onelife) { // Can read one time
                 $this->scriptaRepository->delete($scriptum);
+                return $scriptum;
+            } elseif ($scriptum->destruction < date('Y-m-d 00:00:00')) { // Can't read anymore
+                $this->scriptaRepository->delete($scriptum);
+                return null;
+            } else { // Can read
+                return $scriptum;
             }
-            return $scriptum;
-        } else {
+        } else { // Scriptum not found, or ref mismatch
             return null;
         }
     }
