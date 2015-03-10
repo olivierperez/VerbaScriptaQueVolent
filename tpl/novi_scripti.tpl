@@ -4,8 +4,10 @@
     <!-- App JS -->
     <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css"/>
-    <script src="/js/datepicker.js"></script>
-    <script src="/js/novi_scripti.js"></script>
+    <script type="text/javascript" src="/js/datepicker.js"></script>
+    <script type="text/javascript" src="/js/novi_scripti.js"></script>
+    <script type="text/javascript" src="/js/ace-min/ace.js"></script>
+    <script type="text/javascript" src="/js/ace-min/ext-beautify.js"></script>
 {/block}
 
 {block name=main}
@@ -13,11 +15,13 @@
     <form id="novi_scripti" action="../api.php?s=scriptum" method="post">
 
         <div class="row">
-            <div class="col-md-6 form-group">
+            <div class="col-md-8 form-group">
                 <label for="content">{'Content'|i18n}</label>
-                <textarea name="content" id="content" rows="20" cols="50" class="form-control vert" required></textarea>
+                <input type="hidden" name="content" id="content"/>
+                <pre id="editor" style="height:384px" class="form-control"></pre>
             </div>
-            <div class="col-md-6 form-group">
+
+            <div class="col-md-4 form-group">
                 <label>{'Settings'|i18n}</label>
 
                 <div class="input-group">

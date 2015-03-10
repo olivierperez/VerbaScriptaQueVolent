@@ -2,6 +2,15 @@
 
 $(document).ready(function () {
 
+    // Load ACE editor
+    //----------------
+    var editor = ace.edit('editor');
+    editor.getSession().setMode("ace/mode/markdown");
+    editor.setValue($('#content').val());
+    editor.getSession().on('change', function () {
+        $('#content').val(editor.getValue());
+    });
+
     // Handle form submition
     //----------------------
 
@@ -20,8 +29,8 @@ $(document).ready(function () {
         event.stopPropagation();
         console.log(this);
 
-        var method = $(this).attr('method') || 'POST';
-        var url = $(this).attr('action') || '.';
+        var method = $(this).attr('method');
+        var url = $(this).attr('action');
 
         // Retreive data
         var scriptum = {

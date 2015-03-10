@@ -16,7 +16,7 @@
                     {if $scriptum->onelife}
                     <div class="alert alert-danger"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span> This text will destroy itself after reading.</div>
                     {/if}
-                    {$scriptum->content|html}
+                    {$scriptum->content|markdown}
                 </div>
             </div>
         </div>

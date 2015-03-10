@@ -24,3 +24,9 @@ function smarty_modifier_i18n($html) {
     // TODO use i18n
     return $html;
 }
+
+function smarty_modifier_markdown($html) {
+    return Parsedown::instance()
+        ->setMarkupEscaped(true)
+        ->parse($html);
+}
