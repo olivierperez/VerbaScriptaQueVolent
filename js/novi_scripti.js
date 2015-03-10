@@ -16,7 +16,9 @@ $(document).ready(function () {
 
     var onSuccess = function (response) {
         console.log(response);
-        document.location = response.url;
+        $('#scriptum-created-title').html(response.title);
+        $('#scriptum-created-url').html(response.url);
+        $('#scriptum-created').removeClass('hide');
     };
 
     var onFail = function (status, response) {
@@ -27,7 +29,6 @@ $(document).ready(function () {
         // Stop submitting form
         event.preventDefault();
         event.stopPropagation();
-        console.log(this);
 
         var method = $(this).attr('method');
         var url = $(this).attr('action');

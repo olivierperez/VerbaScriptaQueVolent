@@ -12,6 +12,12 @@
 
 {block name=main}
     <h1>{'New scriptum'|i18n}</h1>
+
+    <div id="scriptum-created" class="alert alert-success alert-dismissible hide" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        {'You just create the Scriptum'|i18n} "<strong id="scriptum-created-title"></strong>", {'It could be seen at this address'|i18n} <strong id="scriptum-created-url"></strong>
+    </div>
+
     <form id="novi_scripti" action="../api.php?s=scriptum" method="post">
 
         <div class="row">
@@ -32,7 +38,7 @@
                 <div class="input-group">
                     <label class="input-group-addon" for="publication">{'Publication date'|i18n}</label>
                     <input type="text" name="publication" id="publication" class="form-control datepicker"
-                           maxlength="10" required/>
+                           maxlength="10"/>
                 </div>
 
                 <div class="input-group">
