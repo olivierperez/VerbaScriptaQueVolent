@@ -8,6 +8,7 @@ class Scriptum {
     public $title;
     public $content;
     public $creation;
+    public $publication;
     public $destruction;
     public $onelife;
 

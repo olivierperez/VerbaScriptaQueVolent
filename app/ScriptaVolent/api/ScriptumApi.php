@@ -19,6 +19,7 @@ class ScriptumApi implements Api {
             $scriptum = json_decode($_POST['scriptum']);
             $scriptum->label = substr(filter_var($scriptum->title, FILTER_VALIDATE_REGEXP, ['options' => ['regexp' => REGEX_LABEL]]), 0, 255);
             $scriptum->destruction = filter_var($scriptum->destruction, FILTER_VALIDATE_REGEXP, ['options' => ['regexp' => REGEX_DATE]]);
+            $scriptum->publication = filter_var($scriptum->publication, FILTER_VALIDATE_REGEXP, ['options' => ['regexp' => REGEX_DATE]]);
             $scriptum->onelife = !!$scriptum->onelife; // Only allow true or false
             // TODO clean $scriptum->content input
 

@@ -28,13 +28,15 @@ class ScriptumService {
 
     public function read($id, $ref) {
         $scriptum = $this->scriptumRepository->get($id);
-        if ($scriptum != null && $scriptum->ref === $ref) {
-            if ($scriptum->onelife) { // Can read one time
-                $this->scriptumRepository->delete($scriptum);
-                return $scriptum;
-            } elseif ($scriptum->destruction < date('Y-m-d 00:00:00')) { // Can't read anymore
+        if ($scriptum && $scriptum->ref === $ref) {
+            if ($scriptum->destruction < date('Y-m-d 00:00:00')) { // Can't read anymore
                 $this->scriptumRepository->delete($scriptum);
                 return null;
+            } elseif($scriptum->publication && $scriptum->publication > date('Y-m-d 00:00:00')) { // Can't read for now
+                return null;
+            } elseif ($scriptum->onelife) { // Can read one time
+                $this->scriptumRepository->delete($scriptum);
+                return $scriptum;
             } else { // Can read
                 return $scriptum;
             }

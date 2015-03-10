@@ -36,6 +36,7 @@ $(document).ready(function () {
         var scriptum = {
             title: this.elements.title.value,
             content: this.elements.content.value,
+            publication: this.elements.publication.value,
             destruction: this.elements.destruction.value,
             onelife: this.elements.onelife.checked
         };

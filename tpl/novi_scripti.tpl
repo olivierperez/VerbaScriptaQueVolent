@@ -30,6 +30,12 @@
                 </div>
 
                 <div class="input-group">
+                    <label class="input-group-addon" for="publication">{'Publication date'|i18n}</label>
+                    <input type="text" name="publication" id="publication" class="form-control datepicker"
+                           maxlength="10" required/>
+                </div>
+
+                <div class="input-group">
                     <label class="input-group-addon" for="destruction">{'Destruction date'|i18n}</label>
                     <input type="text" name="destruction" id="destruction" class="form-control datepicker"
                            maxlength="10" required/>

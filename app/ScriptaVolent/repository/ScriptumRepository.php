@@ -18,11 +18,15 @@ class ScriptumRepository {
      * @return Scriptum
      */
     public function insert($scriptum) {
-        $stmt = $this->pdo->prepare('INSERT INTO scriptum (ref, title, content, destruction, onelife) VALUES (:ref, :title, :content, :destruction, :onelife)');
+        $stmt = $this->pdo->prepare('
+            INSERT INTO scriptum (ref, title, content, publication, destruction, onelife)
+            VALUES (:ref, :title, :content, :publication, :destruction, :onelife)
+        ');
         $stmt->execute([
                            'ref' => $scriptum->ref,
                            'title' => $scriptum->title,
                            'content' => $scriptum->content,
+                           'publication' => $scriptum->publication,
                            'destruction' => $scriptum->destruction,
                            'onelife' => $scriptum->onelife,
                        ]);
@@ -50,7 +54,7 @@ class ScriptumRepository {
      */
     public function delete($scriptum) {
         $stmt = $this->pdo->prepare('DELETE FROM scriptum WHERE id=:id');
-        $stmt->execute(['id'=>$scriptum->id]);
+        $stmt->execute(['id' => $scriptum->id]);
     }
 
 }

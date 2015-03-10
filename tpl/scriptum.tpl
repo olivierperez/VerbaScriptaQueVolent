@@ -23,19 +23,23 @@
         <div class="col-md-4">
             <div class="list-group">
                 <div class="list-group-item">
-                    <strong class="list-group-item-heading"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Title</strong>
+                    <strong class="list-group-item-heading"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> {'Title'|i18n}</strong>
                     <p class="list-group-item-text">{$scriptum->title|html}</p>
                 </div>
                 <div class="list-group-item">
-                    <strong class="list-group-item-heading"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Creation</strong>
+                    <strong class="list-group-item-heading"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> {'Creation'|i18n}</strong>
                     <p class="list-group-item-text">{$scriptum->creation|html}</p>
                 </div>
                 <div class="list-group-item">
-                    <strong class="list-group-item-heading"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Destruction</strong>
+                    <strong class="list-group-item-heading"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {'Publication'|i18n}</strong>
+                    <p class="list-group-item-text">{$scriptum->publication|html}</p>
+                </div>
+                <div class="list-group-item">
+                    <strong class="list-group-item-heading"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> {'Destruction'|i18n}</strong>
                     <p class="list-group-item-text">{$scriptum->destruction|html}</p>
                 </div>
                 <div class="list-group-item">
-                    <strong class="list-group-item-heading"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> Share link</strong>
+                    <strong class="list-group-item-heading"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> {'Share link'|i18n}</strong>
                     <p class="list-group-item-text"><a href="{$scriptum|directLink}">{$scriptum|directLink}</a></p>
                 </div>
             </div>
