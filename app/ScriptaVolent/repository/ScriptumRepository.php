@@ -1,7 +1,7 @@
 <?php
 namespace ScriptaVolent\repository;
 
-use ScriptaVolent\Model\Scriptum;
+use ScriptaVolent\model\Scriptum;
 
 class ScriptumRepository {
 

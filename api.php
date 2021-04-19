@@ -1,5 +1,5 @@
 <?php
-use ScriptaVolent\Api\ScriptumApi;
+use ScriptaVolent\api\ScriptumApi;
 
 require 'inc/init.php';
 

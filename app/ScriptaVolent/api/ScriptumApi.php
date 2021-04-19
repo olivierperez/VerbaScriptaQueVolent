@@ -1,5 +1,5 @@
 <?php
-namespace ScriptaVolent\Api;
+namespace ScriptaVolent\api;
 
 use ScriptaVolent\service\ScriptumService;
 use ScriptaVolent\Utils;

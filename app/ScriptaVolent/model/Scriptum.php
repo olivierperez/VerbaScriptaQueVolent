@@ -1,5 +1,5 @@
 <?php
-namespace ScriptaVolent\Model;
+namespace ScriptaVolent\model;
 
 class Scriptum {
 
